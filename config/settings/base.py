@@ -1,9 +1,10 @@
 from pathlib import Path
 
-from django.conf.global_settings import LOGGING_CONFIG
+from django.conf.global_settings import LOGGING_CONFIG, AUTH_USER_MODEL
 from dotenv import load_dotenv
 from os import getenv, path
 from loguru import logger
+from datetime import timedelta
 
 from tutorial.settings import INSTALLED_APPS
 
@@ -146,7 +147,15 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+AUTH_USER_MODEL = "user_auth.User"
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
+SPECTACULAR_SETTINGS = {
+    "TITLE": "NextGen Bank API",
+    "DESCRIPTION": "An API built for banking system",
+    "VERSION": "1.0.0",
+    "SERVER_INCLUDE_SCHEMA": False,
+    "LICENSE": {"name": "MIT License", "url": "https://opensource.org/license/mit"},
+}
 
 LOGGING_CONFIG = None
 

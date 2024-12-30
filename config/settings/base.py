@@ -5,7 +5,7 @@ from django.conf.global_settings import LOGGING_CONFIG, AUTH_USER_MODEL
 from dotenv import load_dotenv
 from os import getenv, path
 from loguru import logger
-from datetime import timedelta
+from datetime import timedelta, date
 import cloudinary
 
 from tutorial.settings import INSTALLED_APPS
@@ -151,6 +151,12 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "user_auth.User"
+DEFAULT_BIRTH_DATE = date(1900, 1, 1)
+DEFAULT_DATE = date(2000, 1, 1)
+DEFAULT_EXPIRY_DATE = date(2024, 1, 1)
+DEFAULT_COUNTRY = "DE"
+DEFAULT_PHONE_NUMBER = "+4915123456789"
+
 REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
 SPECTACULAR_SETTINGS = {
     "TITLE": "NextGen Bank API",

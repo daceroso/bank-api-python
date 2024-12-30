@@ -1,5 +1,5 @@
-from typing import Any
 from django.contrib import admin
+from typing import Any
 from django.contrib.contenttypes.admin import GenericTabularInline
 from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
@@ -17,9 +17,8 @@ class ContentViewAdmin(admin.ModelAdmin):
         "last_viewed",
         "created_at",
     ]
-
     list_filter = ["content_type", "last_viewed", "created_at"]
-    date_hierarchy = ("last_viewed",)
+    date_hierarchy = "last_viewed"
     readonly_fields = [
         "content_type",
         "object_id",
@@ -29,7 +28,6 @@ class ContentViewAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     ]
-
     fieldsets = (
         (None, {"fields": ("content_type", "object_id", "content_object")}),
         (_("View Details"), {"fields": ("user", "viewer_ip", "last_viewed")}),

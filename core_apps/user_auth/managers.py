@@ -2,6 +2,7 @@ import random
 import string
 from os import getenv
 from typing import Any, Optional
+
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager as DjangoUserManager
 from django.core.exceptions import ValidationError

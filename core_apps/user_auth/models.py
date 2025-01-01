@@ -63,7 +63,7 @@ class User(AbstractUser):
     )
     otp_expiry_time = models.DateTimeField(_("OPT Expiry Time"), null=True, blank=True)
 
-    Objects = UserManager()
+    objects = UserManager()
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
         "first_name",

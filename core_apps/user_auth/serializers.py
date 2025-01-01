@@ -3,13 +3,12 @@ from djoser.serializers import (
     UserCreateSerializer as DjoserUserCreateSerializer,
 )
 
-
 User = get_user_model()
 
 
 class UserCreateSerializer(DjoserUserCreateSerializer):
     class Meta(DjoserUserCreateSerializer.Meta):
-        moder = User
+        model = User
         fields = [
             "email",
             "username",

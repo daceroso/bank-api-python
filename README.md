@@ -28,8 +28,8 @@ The project is **containerized with Docker** and includes integrations with **Ce
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/nextgen-bank-api.git
-cd nextgen-bank-api
+git clone https://github.com/yourusername/bank-api.git
+cd bank-api
 ```
 
 ### **2. Set Up Environment Variables**

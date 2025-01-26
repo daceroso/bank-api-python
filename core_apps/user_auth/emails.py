@@ -12,10 +12,9 @@ def send_otp_email(email, otp):
     recipient_list = [email]
     context = {
         "otp": otp,
-        "expire_time": settings.OTP_EXPIRATION,
+        "expiry_time": settings.OTP_EXPIRATION,
         "site_name": settings.SITE_NAME,
     }
-
     html_email = render_to_string("emails/otp_email.html", context)
     plain_email = strip_tags(html_email)
     email = EmailMultiAlternatives(subject, plain_email, from_email, recipient_list)

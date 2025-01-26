@@ -104,7 +104,7 @@ class Transaction(TimeStampedModel):
     )
 
     amount = models.DecimalField(
-        _("Amount"), decimal_places=2, max_digits=2, default=0.00
+        _("Amount"), decimal_places=2, max_digits=12, default=0.00
     )
     description = models.CharField(
         _("Description"),

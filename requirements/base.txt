@@ -19,3 +19,4 @@ redis==5.2.1
 celery==5.4.0
 flower==2.0.1
 django-redis==5.4.0
+reportlab==4.2.5

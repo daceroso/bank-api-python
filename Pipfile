@@ -25,6 +25,7 @@ redis = "*"
 celery = "*"
 flower = "*"
 django-redis = "*"
+reportlab = "*"
 
 [dev-packages]
 watchfiles = "==1.0.3"

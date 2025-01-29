@@ -1,14 +1,12 @@
 from pathlib import Path
 
-from celery.apps.multi import CELERY_EXE
-from django.conf.global_settings import LOGGING_CONFIG, AUTH_USER_MODEL
+
 from dotenv import load_dotenv
 from os import getenv, path
 from loguru import logger
 from datetime import timedelta, date
 import cloudinary
 
-from tutorial.settings import INSTALLED_APPS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -230,6 +228,13 @@ CELERY_TASK_TIME_LIMIT = 5 * 60
 CELERY_TASK_SOFT_TIME_LIMIT = 60
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 CELERY_WORKER_SEND_TASK_EVENTS = True
+
+CELERY_BEAT_SCHEDULE = {
+    "apply-daily-interest": {
+        "task": "apply_daily_interest",
+    }
+}
+
 CLOUDINARY_CLOUD_NAME = getenv("CLOUDINARY_CLOUD_NAME")
 CLOUDINARY_API_KEY = getenv("CLOUDINARY_API_KEY")
 CLOUDINARY_API_SECRET = getenv("CLOUDINARY_API_SECRET")
